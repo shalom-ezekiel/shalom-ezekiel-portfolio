@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
           <div className="lg:col-span-4 flex justify-center lg:block animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
              <div className="w-64 md:w-80 lg:w-full aspect-square rounded-full overflow-hidden border-2 border-zinc-800 relative group animate-float">
                 <img 
-                  src="images/1000590099.png" 
+                  src="/images/1000590099.png" 
                   alt="Profile" 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter " 
                 />

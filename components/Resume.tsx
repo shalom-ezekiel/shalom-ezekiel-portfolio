@@ -4,7 +4,7 @@ import { Download, Eye, FileText, Smartphone, QrCode } from 'lucide-react';
 const Resume: React.FC = () => {
   // Path to  PDF 
   const resumePath = "/assets/cv/Resume.pdf";
-  const portfolioUrl = "https://showzy.dev"; // domain
+  const portfolioUrl = "https://shalomezekiel.vercel.app"; // domain
 
   return (
     <section id="resume" className="py-24 px-4 md:px-8 max-w-[1600px] mx-auto">

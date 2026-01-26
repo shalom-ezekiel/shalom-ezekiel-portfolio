@@ -117,7 +117,7 @@ export const PROJECTS: Project[] = [
     title: "Rach.finance",
     description: "Boraderless payments powered by blockchain  send, receive, and trade crypto globally  p2p  .",
     techStack: ["React", "blockchain", "solidity","goland"],
-    imageUrl: "images/Rach-finance.png",
+    imageUrl: "/images/Rach-finance.png",
     link: "https://www.rach.finance/"
   },
   {
@@ -125,7 +125,7 @@ export const PROJECTS: Project[] = [
     title: "delivery-platform",
     description: "A custom delivery platform that streamlines order management and real-time tracking for logistics companies.",
     techStack: ["python", "javascript", "tailwind CSS","postgresql"],
-    imageUrl: "images/delivery-platform.png",
+    imageUrl: "/images/delivery-platform.png",
     link: "https://delivery-platform-nine.vercel.app/"
   }
 ];

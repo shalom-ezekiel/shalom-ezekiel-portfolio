@@ -253,7 +253,7 @@ const App: React.FC = () => {
           <div className="flex flex-col gap-2 items-start md:items-end">
              <div className="bg-white p-2 rounded-xl">
                <img 
-                 src="https://shalomezekiel.vercel.app//v1/create-qr-code/?size=100x100&data=https://showzy.dev" 
+                 src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://shalomezekiel.vercel.app" 
                  alt="Scan" 
                  className="w-24 h-24"
                />
