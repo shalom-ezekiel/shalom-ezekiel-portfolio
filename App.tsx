@@ -21,7 +21,7 @@ const CustomCursor = () => {
       if (cursorRef.current && followerRef.current) {
         // Main cursor
         cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-        
+
         // Follower with lag
         followerRef.current.animate({
           transform: `translate3d(${e.clientX - 16}px, ${e.clientY - 16}px, 0)`
@@ -38,14 +38,14 @@ const CustomCursor = () => {
 
   return (
     <>
-      <div 
-        ref={cursorRef} 
-        className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-[100] mix-blend-difference hidden md:block" 
+      <div
+        ref={cursorRef}
+        className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-[100] mix-blend-difference hidden md:block"
         style={{ marginTop: '-6px', marginLeft: '-6px' }}
       />
-      <div 
-        ref={followerRef} 
-        className="fixed top-0 left-0 w-8 h-8 border border-white/30 rounded-full pointer-events-none z-[99] mix-blend-difference hidden md:block transition-opacity duration-300" 
+      <div
+        ref={followerRef}
+        className="fixed top-0 left-0 w-8 h-8 border border-white/30 rounded-full pointer-events-none z-[99] mix-blend-difference hidden md:block transition-opacity duration-300"
       />
     </>
   );
@@ -58,14 +58,14 @@ const App: React.FC = () => {
   // Force scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Disable default browser scroll restoration
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-    
+
     return () => {
-       if ('scrollRestoration' in history) {
+      if ('scrollRestoration' in history) {
         history.scrollRestoration = 'auto';
       }
     }
@@ -130,7 +130,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#020202] text-zinc-100 selection:bg-indigo-500/90 selection:text-black relative">
       <CustomCursor />
-      
+
       {/* Noise Overlay */}
       <div className="fixed inset-0 bg-noise opacity-30 pointer-events-none z-0 mix-blend-overlay noise-overlay"></div>
 
@@ -148,11 +148,10 @@ const App: React.FC = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.section, item.id)}
-                className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-300 ${
-                  activeSection === item.section 
-                    ? 'bg-zinc-100 text-black font-bold scale-105' 
+                className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-300 ${activeSection === item.section
+                    ? 'bg-zinc-100 text-black font-bold scale-105'
                     : 'text-zinc-400 hover:text-white hover:bg-white/5'
-                }`}
+                  }`}
               >
                 {item.label}
               </button>
@@ -160,7 +159,7 @@ const App: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden text-zinc-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -172,19 +171,18 @@ const App: React.FC = () => {
       {/* Mobile Nav Overlay */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl pt-32 px-6 md:hidden animate-fade-in">
-           <div className="flex flex-col gap-8 text-4xl font-display font-bold tracking-tight">
+          <div className="flex flex-col gap-8 text-4xl font-display font-bold tracking-tight">
             {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.section, item.id)}
-                className={`text-left py-4 border-b border-white/10 transition-colors ${
-                  activeSection === item.section ? 'text-indigo-400' : 'text-zinc-500 hover:text-white'
-                }`}
+                className={`text-left py-4 border-b border-white/10 transition-colors ${activeSection === item.section ? 'text-indigo-400' : 'text-zinc-500 hover:text-white'
+                  }`}
               >
                 {item.label.replace('// ', '')}
               </button>
             ))}
-           </div>
+          </div>
         </div>
       )}
 
@@ -215,11 +213,11 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Col */}
           <div className="flex flex-col gap-4">
-             <div className="font-display font-bold text-2xl tracking-tighter">SHOWZY.DEV</div>
-             <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
-               Crafting the next generation of web experiences with precision, passion, and AI-driven insights.
-             </p>
-             <div className="flex items-center gap-2 text-zinc-500 font-mono text-xs mt-2">
+            <div className="font-display font-bold text-2xl tracking-tighter">SHOWZY.DEV</div>
+            <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
+              Crafting the next generation of web experiences with precision, passion, and AI-driven insights.
+            </p>
+            <div className="flex items-center gap-2 text-zinc-500 font-mono text-xs mt-2">
               <Terminal size={14} />
               <span>EXECUTION_TIME: 24ms</span>
             </div>
@@ -227,53 +225,53 @@ const App: React.FC = () => {
 
           {/* Links Col */}
           <div className="flex flex-col gap-2">
-             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Navigation</h4>
-             {navItems.map(item => (
-               <button key={item.label} onClick={() => scrollToSection(item.section, item.id)} className="text-left text-zinc-500 hover:text-indigo-400 transition-colors text-sm">
-                 {item.label}
-               </button>
-             ))}
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Navigation</h4>
+            {navItems.map(item => (
+              <button key={item.label} onClick={() => scrollToSection(item.section, item.id)} className="text-left text-zinc-500 hover:text-indigo-400 transition-colors text-sm">
+                {item.label}
+              </button>
+            ))}
           </div>
 
           {/* Socials Col */}
           <div className="flex flex-col gap-2">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Connect</h4>
-             <div className="flex items-center gap-4">
-               <a href={SOCIAL_LINKS.GITHUB} target="_blank" rel="noopener noreferrer" className="p-2 bg-zinc-900 rounded-lg text-zinc-500 hover:text-white hover:bg-zinc-800 transition-all hover:-translate-y-1"><Github size={18} /></a>
-               <a href={SOCIAL_LINKS.LINKEDIN} target="_blank" rel="noopener noreferrer" className="p-2 bg-zinc-900 rounded-lg text-zinc-500 hover:text-white hover:bg-zinc-800 transition-all hover:-translate-y-1"><Linkedin size={18} /></a>
-               <a href={SOCIAL_LINKS.TWITTER} target="_blank" rel="noopener noreferrer" className="p-2 bg-zinc-900 rounded-lg text-zinc-500 hover:text-white hover:bg-zinc-800 transition-all hover:-translate-y-1"><Twitter size={18} /></a>
-               <a href={SOCIAL_LINKS.EMAIL} className="p-2 bg-zinc-900 rounded-lg text-zinc-500 hover:text-white hover:bg-zinc-800 transition-all hover:-translate-y-1"><Mail size={18} /></a>
-             </div>
-             <a href={SOCIAL_LINKS.EMAIL} className="text-sm text-zinc-500 hover:text-indigo-400 mt-2 block">
-               shalomezekiel112@gmail.com
-             </a>
+            <div className="flex items-center gap-4">
+              <a href={SOCIAL_LINKS.GITHUB} target="_blank" rel="noopener noreferrer" className="p-2 bg-zinc-900 rounded-lg text-zinc-500 hover:text-white hover:bg-zinc-800 transition-all hover:-translate-y-1"><Github size={18} /></a>
+              <a href={SOCIAL_LINKS.LINKEDIN} target="_blank" rel="noopener noreferrer" className="p-2 bg-zinc-900 rounded-lg text-zinc-500 hover:text-white hover:bg-zinc-800 transition-all hover:-translate-y-1"><Linkedin size={18} /></a>
+              <a href={SOCIAL_LINKS.TWITTER} target="_blank" rel="noopener noreferrer" className="p-2 bg-zinc-900 rounded-lg text-zinc-500 hover:text-white hover:bg-zinc-800 transition-all hover:-translate-y-1"><Twitter size={18} /></a>
+              <a href={SOCIAL_LINKS.EMAIL} className="p-2 bg-zinc-900 rounded-lg text-zinc-500 hover:text-white hover:bg-zinc-800 transition-all hover:-translate-y-1"><Mail size={18} /></a>
+            </div>
+            <a href={SOCIAL_LINKS.EMAIL} className="text-sm text-zinc-500 hover:text-indigo-400 mt-2 block">
+              shalomezekiel112@gmail.com
+            </a>
           </div>
 
           {/* QR Col */}
           <div className="flex flex-col gap-2 items-start md:items-end">
-             <div className="bg-white p-2 rounded-xl">
-               <img 
-                 src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://shalomezekiel.vercel.app" 
-                 alt="Scan" 
-                 className="w-24 h-24"
-               />
-             </div>
-             <div className="text-right">
-                <div className="text-xs font-bold text-white mt-1">SCAN_ME</div>
-                <div className="text-[10px] text-zinc-500 font-mono">Mobile Portfolio</div>
-             </div>
+            <div className="bg-white p-2 rounded-xl">
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://shalomezekiel.vercel.app"
+                alt="Scan"
+                className="w-24 h-24"
+              />
+            </div>
+            <div className="text-right">
+              <div className="text-xs font-bold text-white mt-1">SCAN_ME</div>
+              <div className="text-[10px] text-zinc-500 font-mono">Mobile Portfolio</div>
+            </div>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-           <p className="text-zinc-600 text-xs font-display uppercase tracking-widest">
-              © 202 Shalom Ezekiel. Engineered with Passion.
-            </p>
-            <div className="flex gap-4 text-xs text-zinc-600">
-               <span>Privacy</span>
-               <span>Terms</span>
-               <span>Sitemap</span>
-            </div>
+          <p className="text-zinc-600 text-xs font-display uppercase tracking-widest">
+            © 2026 Shalom Ezekiel. Engineered.
+          </p>
+          <div className="flex gap-4 text-xs text-zinc-600">
+            <span>Privacy</span>
+            <span>Terms</span>
+            <span>Sitemap</span>
+          </div>
         </div>
       </footer>
 

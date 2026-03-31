@@ -3,7 +3,7 @@ import { Download, Eye, FileText, Smartphone, QrCode } from 'lucide-react';
 
 const Resume: React.FC = () => {
   // Path to  PDF 
-  const resumePath = "/assets/cv/Resume.pdf";
+  const resumePath = "/assets/cv/Ezekiel_Shalom_Williams_CV.pdf";
   const portfolioUrl = "https://shalomezekiel.vercel.app"; // domain
 
   return (
@@ -41,7 +41,7 @@ const Resume: React.FC = () => {
               
               <a 
                 href={resumePath}
-                download="Shalom_Ezekiel_Resume.pdf"
+                download="Ezekiel_Shalom_Williams_CV.pdf"
                 className="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold font-mono text-sm transition-all shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 flex items-center justify-center gap-3 group transform hover:-translate-y-1"
               >
                 <Download size={18} className="group-hover:scale-110 transition-transform" />

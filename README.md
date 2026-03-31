@@ -17,5 +17,5 @@ This website is designed to highlight my professional journey, completed project
 ## Tech Stack
 
 - **Frontend:** React, typeScript,   tailwind CSS, JavaScript, Tailwind CSS
-- **Backend soon :**  Express 
+
 

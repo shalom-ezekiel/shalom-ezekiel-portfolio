@@ -127,6 +127,14 @@ export const PROJECTS: Project[] = [
     techStack: ["python", "javascript", "tailwind CSS","postgresql"],
     imageUrl: "/images/delivery-platform.png",
     link: "https://delivery-platform-nine.vercel.app/"
+  },
+  {
+    id: 'p5',
+    title: "Trivot savings and investment app",
+    description: "A savings and investment app that helps users grow their wealth with personalized recommendations and automated investing.",
+    techStack: ["React native", "postgreSQL", "payment gateway", "redis", "google cloud","docker"],
+    imageUrl: "/images/trivot_website.png",
+    link: "http://trivot.vercel.app/"
   }
 ];
 
