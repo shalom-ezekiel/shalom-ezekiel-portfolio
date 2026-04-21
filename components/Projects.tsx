@@ -63,6 +63,7 @@ const Projects: React.FC = () => {
                 src={project.imageUrl} 
                 alt={project.title} 
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out z-0" 
+                style={project.id === 'p1' ? { objectPosition: 'bottom' } : undefined}
               />
             </div>
           );
